@@ -14,14 +14,21 @@ setupSwagger(server);
 
 server.get('/tarefas', async (req, res) => {
   try {
-    const pool = await connectToDatabase();
-    const result = await pool.query('SELECT * FROM Tarefa');
-    res.json(result.recordset);
+     const db = await connectToDatabase();
+    const tarefas = await db.collection('tarefas').find().toArray();
+    res.json(tarefas);
   } catch (err) {
     res.status(500).json({ error: 'Erro ao consultar o banco de dados' });
   }
 });
 
-server.listen(4000,()=>{
-    console.log("Server On !")
-})
+connectToDatabase()
+  .then(() => {
+    server.listen(process.env.PORT, () => {
+      console.log(`Server On! Porta: ${process.env.PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('Falha na inicialização:', err);
+    process.exit(1);
+  });

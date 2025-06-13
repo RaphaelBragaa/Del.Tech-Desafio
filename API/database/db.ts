@@ -1,28 +1,20 @@
-import sql from 'mssql';
 import dotenv from 'dotenv';
+import { MongoClient } from 'mongodb';
 
 dotenv.config();
 
-const config = {
-  server: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  options: {
-    encrypt: true,
-    trustServerCertificate: true,
-  }
-};
+const config = new MongoClient(process.env.MONGO_URI);
 
 console.log('Configuração do banco de dados:', config); 
 
 export async function connectToDatabase() {
   try {
-    const pool = await sql.connect(config);
-    console.log('Conectado ao SQL Server!');
-    return pool;
+    await config.connect();
+    const db = config.db();
+    console.log('Conectado ao MongoDB!');
+    return db;
   } catch (err) {
-    console.error('Erro ao conectar ao SQL Server:', err);
+    console.error('Erro ao conectar ao MongoDB:', err);
     throw err;
   }
 }
