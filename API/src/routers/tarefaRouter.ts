@@ -2,7 +2,8 @@ import express from 'express';
 import {
   listarTarefasController,
   criarTarefaController,
-  buscarTarefaController
+  buscarTarefaController,
+  deletarTarefaController
 } from '../controllers/tarefaController';
 
 const tarefaRouter = express.Router();
@@ -10,6 +11,8 @@ const tarefaRouter = express.Router();
 tarefaRouter
   .get('/', listarTarefasController)
   .post('/', criarTarefaController)
-  .get('/:id', buscarTarefaController);
+  .get('/:id', buscarTarefaController)
+  .delete('/:id', deletarTarefaController);
+
 
 export default tarefaRouter;

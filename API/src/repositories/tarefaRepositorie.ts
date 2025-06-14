@@ -9,12 +9,21 @@ export function listarTarefasRepositorie () {
       return tarefas;
   }
 
-export function criarTarefaRepositorie (tarefa: TarefaCreate) {
-      const result = db.collection('tarefas').insertOne(tarefa);
-      return result;
-  }
+export  function criarTarefaRepositorie(tarefa: TarefaCreate) {
+  const tarefaComData = {
+    ...tarefa,
+    dataCriacao: new Date()
+  };
+  const result = db.collection('tarefas').insertOne(tarefaComData);
+  return result;
+}
 
   export function buscarTarefaRepositorie (id: string) {
     const tarefa = db.collection('tarefas').findOne({ _id: new ObjectId(id) });
     return tarefa;
+  }
+
+  export function deletarTarefaRepositorie (id: string) {
+    const result = db.collection('tarefas').deleteOne({ _id: new ObjectId(id) });
+    return result;
   }

@@ -73,4 +73,19 @@
  *               $ref: '#/components/schemas/Tarefa'
  *       404:
  *         description: Tarefa não encontrada
+ *   delete:
+ *     summary: Deleta uma tarefa específica
+ *     tags: [Tarefas]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID da tarefa
+ *     responses:
+ *       200:
+ *         description: Tarefa deletada com sucesso
+ *       404:
+ *         description: Tarefa não encontrada
  */
