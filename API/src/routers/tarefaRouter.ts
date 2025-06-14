@@ -1,13 +1,15 @@
 import express from 'express';
 import {
   listarTarefasController,
-  criarTarefaController
+  criarTarefaController,
+  buscarTarefaController
 } from '../controllers/tarefaController';
 
 const tarefaRouter = express.Router();
 
 tarefaRouter
   .get('/', listarTarefasController)
-  .post('/', criarTarefaController);
+  .post('/', criarTarefaController)
+  .get('/:id', buscarTarefaController);
 
 export default tarefaRouter;

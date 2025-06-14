@@ -53,4 +53,24 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Tarefa'
+* /tarefas/{id}:
+ *   get:
+ *     summary: Retorna uma tarefa específica
+ *     tags: [Tarefas]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID da tarefa
+ *     responses:
+ *       200:
+ *         description: Tarefa retornada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Tarefa'
+ *       404:
+ *         description: Tarefa não encontrada
  */
