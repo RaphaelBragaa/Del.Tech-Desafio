@@ -37,4 +37,20 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Tarefa'
+ *   post:
+ *     summary: Cria uma nova tarefa
+ *     tags: [Tarefas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Tarefa'
+ *     responses:
+ *       201:
+ *         description: Tarefa criada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Tarefa'
  */

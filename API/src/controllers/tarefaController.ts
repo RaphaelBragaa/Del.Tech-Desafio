@@ -1,11 +1,21 @@
 import { Request, Response } from 'express';
-import listarTarefaRepositorie from '../repositories/tarefaRepositorie';
+import { listarTarefasRepositorie, criarTarefaRepositorie } from '../repositories/tarefaRepositorie';
 
-export const listarTarefasController = async (req: Request, res: Response) => {
+export async function  listarTarefasController (req: Request, res: Response) {
   try {
-    const tarefas = await listarTarefaRepositorie();
+    const tarefas = await listarTarefasRepositorie();
     res.json(tarefas);
   } catch (err) {
     res.status(500).json({ error: 'Erro ao listar tarefas' });
+  }
+};
+
+export async function criarTarefaController (req: Request, res: Response) {
+  try {
+    const novaTarefa = req.body;
+    await criarTarefaRepositorie(novaTarefa);
+    res.status(201).json({ message: 'Tarefa criada com sucesso' });
+  } catch (err) {
+    res.status(500).json({ error: 'Erro ao criar tarefa' });
   }
 };
