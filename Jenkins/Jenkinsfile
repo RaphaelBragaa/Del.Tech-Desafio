@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/BrasilAPI/BrasilAPI.git'
+            }
+        }
+        stage('Run Docker') {
+            agent {
+                docker { image 'alpine' }
+            }
+            steps {
+                sh 'echo "Olá mundo Jenkins!"'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    docker.image('nginx').run('-d -p 8080:80')
+                }
+            }
+        }
+    }
+}
