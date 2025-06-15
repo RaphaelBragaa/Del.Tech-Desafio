@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
 # Demanda 1:
 ## API RESTful Node.js + MongoDB + Docker
@@ -98,7 +97,7 @@ docker-compose up --build
 - **Conexão com MongoDB** utilizando variáveis de ambiente.
 - **Persistência de dados** via volumes Docker.
 - **Rede compartilhada entre containers** para garantir comunicação entre API e banco.
-- **Rotas RESTful** (exemplo: `GET /tarefas`, `DEL /tarefas`).
+- **Rotas RESTful** (exemplo: `GET /tarefas`, `DEL /tarefas`, `POST /tarefas`).
 
 ---
 
