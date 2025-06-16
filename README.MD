@@ -32,12 +32,12 @@ Pipeline Jenkins que clona repositório, roda container Docker, executa comando 
 
 ---
 
-## 4. [ELK Stack Básico](./ELK)
+## 4. [ELK Stack](./ELK)
 
 **Resumo:**
 Elasticsearch + Logstash com Docker Compose, senha, processamento de logs e persistência.
 **Dificuldades:** Primeiro contato com essas tecnologias, segurança, integração serviços, persistência dados.
-**Link:** [README ELK Stack Básico](./ELK/readme.md)
+**Link:** [README ELK Stack](./ELK/readme.md)
 
 
 
