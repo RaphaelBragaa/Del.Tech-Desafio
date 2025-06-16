@@ -29,6 +29,7 @@ Esta é uma API RESTful simples desenvolvida em **Node.js** com **TypeScript** e
 - TypeScript
 - Express
 - MongoDB
+- Swagger
 - Docker \& Docker Compose
 
 ---
