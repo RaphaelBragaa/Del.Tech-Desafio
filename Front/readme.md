@@ -4,10 +4,6 @@
 ---
 ## Front-end Html + Nginx + Docker
 
-## Descrição
-
-Este projeto entrega uma **imagem customizada do Nginx** que serve um arquivo HTML simples com o texto **"Hello Del.Tech World"** como página inicial. A configuração foi feita para garantir que o Nginx responda corretamente na porta 80, utilizando um Dockerfile eficiente e um nginx.conf personalizado.
-
 ---
 
 ## Estrutura do Projeto
@@ -64,7 +60,7 @@ Você deve ver a mensagem **Hello Del.Tech World**.
 ## Dificuldades e Soluções
 
 - **Diretório correto para servir arquivos:**
-Inicialmente, tentei servir o HTML a partir de `/var/www/html`, mas descobri que a imagem oficial do Nginx no Docker utiliza `/usr/share/nginx/html` como diretório padrão para arquivos estáticos[^5][^1]. Ajustei o Dockerfile e o nginx.conf para usar o caminho correto.
+Inicialmente, tentei servir o HTML a partir de `/var/www/html`, mas descobri que a imagem oficial do Nginx no Docker utiliza `/usr/share/nginx/html` como diretório padrão para arquivos estáticos. Ajustei o Dockerfile e o nginx.conf para usar o caminho correto.
 - **Configuração personalizada do Nginx:**
 Foi necessário remover a configuração padrão (`default.conf`) e garantir que o novo `nginx.conf` fosse copiado para o local correto, evitando conflitos e garantindo que o index.html fosse servido como página inicial.
 - **Validação do build:**

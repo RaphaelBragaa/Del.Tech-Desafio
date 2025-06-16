@@ -15,7 +15,6 @@ Esta é uma API RESTful simples desenvolvida em **Node.js** com **TypeScript** e
   - [Descrição do Projeto](#descrição-do-projeto)
   - [Índice](#índice)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-  - [Estrutura do Projeto](#estrutura-do-projeto)
   - [Como Executar](#como-executar)
   - [Principais Funcionalidades](#principais-funcionalidades)
   - [Dificuldades e Lógica de Superação](#dificuldades-e-lógica-de-superação)
@@ -34,49 +33,7 @@ Esta é uma API RESTful simples desenvolvida em **Node.js** com **TypeScript** e
 
 ---
 
-## Estrutura do Projeto
-
-```
-API/
-├── node_modules/
-├── src/
-│   ├── config/
-│   ├── controllers/
-│   ├── database/
-│   ├── dist/
-│   ├── models/
-│   ├── repositories/
-│   ├── routers/
-│   └── app.ts
-├── .dockerignore
-├── .env
-├── .env.example
-├── docker-compose.yml
-├── Dockerfile
-├── package.json
-├── package-lock.json
-└── tsconfig.json
-```
-
-- **src/**: Código-fonte da aplicação.
-- **config/**: Configurações gerais.
-- **controllers/**: Lógica das rotas.
-- **database/**: Configuração da conexão com o MongoDB.
-- **models/**: Modelos das entidades do banco.
-- **repositories/**: Lógica de acesso a dados.
-- **routers/**: Definição das rotas da API.
-- **dist/**: Código compilado (TypeScript → JavaScript).
-- **Dockerfile**: Build da imagem da API.
-- **docker-compose.yml**: Orquestração dos containers da API e MongoDB.
-- **.env**: Variáveis de ambiente.
-
----
-
 ## Como Executar
-
-**Pré-requisitos:**
-
-- Docker e Docker Compose instalados.
 
 **Passos:**
 
